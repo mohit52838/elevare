@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-50 text-gray-900;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Dark mode (class strategy) */
+:root { color-scheme: light; }
+.dark { color-scheme: dark; }
+.dark body {
+  @apply bg-gray-900 text-gray-100;
+}
+
+/* Animations */
+@keyframes bounce-once {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+.bounce-once { animation: bounce-once 0.6s ease-in-out; }
+
+@keyframes bounce-hover {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+.bounce-hover:hover { animation: bounce-hover 0.4s ease-in-out; }
+
+@keyframes gradient-slow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-gradient-slow {
+  background-size: 200% 200%;
+  animation: gradient-slow 15s ease infinite;
+}
+
+/* Floating CTA button */
+@keyframes floating {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+.floating-cta {
+  animation: floating 2s ease-in-out infinite;
+}
